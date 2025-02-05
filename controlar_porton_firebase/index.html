@@ -105,88 +105,88 @@ Nota: El programa compartido en esta URL no me funcionó porque usa una librerí
 <p>Lo que hice fue usar este código:<br>
 <a href="https://github.com/MohammedArmanKhan/Turn-LED-ON-OFF-from-firebase-using-ESP32">https://github.com/MohammedArmanKhan/Turn-LED-ON-OFF-from-firebase-using-ESP32</a> (<a href="https://archive.is/dMYbr">https://archive.is/dMYbr</a>)</p>
 <p>En donde contiene la librería vieja usada.</p>
-<pre tabindex="0"><code>#include &lt;WiFi.h&gt;                                                // esp32 library
-
-#include &lt;IOXhop_FirebaseESP32.h&gt;                                             // firebase library
-
-#define FIREBASE_HOST &#34;tuhost&#34;                         // the project name address from firebase id
-
-#define FIREBASE_AUTH &#34;tuclave&#34;                    // the secret key generated from firebase
-
-#define WIFI_SSID &#34;tured&#34;                                          // input your home or public wifi name
-
-#define WIFI_PASSWORD &#34;tuclave&#34;                                    //password of wifi ssid
-
-String fireStatus = &#34;&#34;;                                                     // led status received from firebase
-
-int led = 32;                                                               
-
-void setup() {
-
-  Serial.begin(115200);
-
-  delay(200000);
-
-  pinMode(32, OUTPUT);                
-
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);                                      //try to connect with wifi
-
-  Serial.print(&#34;Connecting to &#34;);
-
-  Serial.print(WIFI_SSID);
-
-  while (WiFi.status() != WL_CONNECTED) {
-
-    Serial.print(&#34;.&#34;);
-
-    delay(500);
-
-  }
-
-  Serial.println();
-
-  Serial.print(&#34;Connected to &#34;);
-
-  Serial.println(WIFI_SSID);
-
-  Serial.print(&#34;IP Address is : &#34;);
-
-  Serial.println(WiFi.localIP());                                                      //print local IP address
-
-  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);                                       // connect to firebase
-
-  Firebase.setString(&#34;/ESP32/LED32&#34;, &#34;0&#34;);                                          //send initial string of led status
-
-}
-
-void loop() {
-  
-  fireStatus = Firebase.getString(&#34;/ESP32/LED32&#34;);                     // get led status input from firebase
-  Serial.println(fireStatus);
-  if (fireStatus == &#34;1&#34;) {                         // compare the input of led status received from firebase
-
-    Serial.println(&#34;Led Turned ON&#34;);                 
-
-    digitalWrite(32, HIGH);                                                         // make output led ON
-
-  }
-
-  else if (fireStatus == &#34;0&#34;) {              // compare the input of led status received from firebase
-
-    Serial.println(&#34;Led Turned OFF&#34;);
-
-    digitalWrite(32, LOW);                                                         // make output led OFF
-
-  }
-
-  else {
-
-    Serial.println(&#34;Wrong Credential! Please send ON/OFF&#34;);
-
-  }
-
-}
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;WiFi.h&gt;                                                // esp32 library</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;IOXhop_FirebaseESP32.h&gt;                                             // firebase library</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define FIREBASE_HOST &#34;tuhost&#34;                         </span><span style="color:#75715e">// the project name address from firebase id
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define FIREBASE_AUTH &#34;tuclave&#34;                    </span><span style="color:#75715e">// the secret key generated from firebase
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define WIFI_SSID &#34;tured&#34;                                          </span><span style="color:#75715e">// input your home or public wifi name
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define WIFI_PASSWORD &#34;tuclave&#34;                                    </span><span style="color:#75715e">//password of wifi ssid
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>String fireStatus <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;                                                     <span style="color:#75715e">// led status received from firebase
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> led <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>;                                                               
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Serial.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">115200</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">200000</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">pinMode</span>(<span style="color:#ae81ff">32</span>, OUTPUT);                
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  WiFi.<span style="color:#a6e22e">begin</span>(WIFI_SSID, WIFI_PASSWORD);                                      <span style="color:#75715e">//try to connect with wifi
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  Serial.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Connecting to &#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Serial.<span style="color:#a6e22e">print</span>(WIFI_SSID);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> (WiFi.<span style="color:#a6e22e">status</span>() <span style="color:#f92672">!=</span> WL_CONNECTED) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Serial.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Serial.<span style="color:#a6e22e">println</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Serial.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Connected to &#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Serial.<span style="color:#a6e22e">println</span>(WIFI_SSID);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Serial.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;IP Address is : &#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Serial.<span style="color:#a6e22e">println</span>(WiFi.<span style="color:#a6e22e">localIP</span>());                                                      <span style="color:#75715e">//print local IP address
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  Firebase.<span style="color:#a6e22e">begin</span>(FIREBASE_HOST, FIREBASE_AUTH);                                       <span style="color:#75715e">// connect to firebase
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  Firebase.<span style="color:#a6e22e">setString</span>(<span style="color:#e6db74">&#34;/ESP32/LED32&#34;</span>, <span style="color:#e6db74">&#34;0&#34;</span>);                                          <span style="color:#75715e">//send initial string of led status
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  fireStatus <span style="color:#f92672">=</span> Firebase.<span style="color:#a6e22e">getString</span>(<span style="color:#e6db74">&#34;/ESP32/LED32&#34;</span>);                     <span style="color:#75715e">// get led status input from firebase
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Serial.<span style="color:#a6e22e">println</span>(fireStatus);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (fireStatus <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;1&#34;</span>) {                         <span style="color:#75715e">// compare the input of led status received from firebase
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    Serial.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Led Turned ON&#34;</span>);                 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">digitalWrite</span>(<span style="color:#ae81ff">32</span>, HIGH);                                                         <span style="color:#75715e">// make output led ON
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (fireStatus <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;0&#34;</span>) {              <span style="color:#75715e">// compare the input of led status received from firebase
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    Serial.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Led Turned OFF&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">digitalWrite</span>(<span style="color:#ae81ff">32</span>, LOW);                                                         <span style="color:#75715e">// make output led OFF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Serial.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Wrong Credential! Please send ON/OFF&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 </div>
 
 
