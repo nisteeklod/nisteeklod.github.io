@@ -29,7 +29,7 @@ git clone https://github.com/qt/qttools cd qttools mkdir build cmake .. Y agreg�
 export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap OJOO!!! Asegurarte de bajar el qttools para la versión de tu QT. Ejemplo de error:">
   <meta itemprop="datePublished" content="2024-12-08T18:39:44-03:00">
   <meta itemprop="dateModified" content="2024-12-08T18:39:44-03:00">
-  <meta itemprop="wordCount" content="200">
+  <meta itemprop="wordCount" content="228">
   <meta itemprop="keywords" content="Framebuffer">
   
   <meta name="twitter:card" content="summary">
@@ -146,10 +146,17 @@ Ejemplo de error:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Version 6.8.2 of package Qt6 was requested but an incompatible version was found: 6.8.1.  You can pass -DQT_NO_PACKAGE_VERSION_CHECK<span style="color:#f92672">=</span>TRUE to disable
 </span></span></code></pre></div><p>Tenés que entrar a la página de qttools bajo Release encontrarás TAGS. Ahí buscá la vresión indicada para vos: en mi caso 6.8.1</p>
 <p><strong>ESO NO ES TODO!!!</strong> Ahora cuando bajes el zip o el tar.gz de tu versión (en mi caso 6.8.1) y lo compiles te va a putear porque te falta <code>src/assistant/qlitehtml</code> porque es un submódulo que no lo baja. Tenés que clonar este repo en <code>/tmp</code> ejecutá:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --recurse-submodules -j8 <span style="color:#e6db74">&#34;https://github.com/PyQt5/QLiteHtml&#34;</span><span style="color:#e6db74">`</span>
+<h4 id="eso-no-es-todo">ESO NO ES TODO</h4>
+<p>No te va a compilar el kmap2qmap, tenés que abrir <code>configure.cmake</code> y descomentar:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>qt_configure_add_summary_entry<span style="color:#f92672">(</span>ARGS <span style="color:#e6db74">&#34;kmap2qmap&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --recurse-submodules -j8 <span style="color:#e6db74">&#34;https://github.com/PyQt5/QLiteHtml&#34;</span><span style="color:#e6db74">`</span>
 </span></span><span style="display:flex;"><span>cd QLiteHtml
 </span></span><span style="display:flex;"><span>cp -R qlitehtml /home/usuario/Downloads/qttools-6.8.1/src/assistant
-</span></span><span style="display:flex;"><span>cd /home/usuario/Downloads/qttools-6.8.1/build
+</span></span><span style="display:flex;"><span>vim /home/usuario/Downloads/qttools-6.8.1/configure.cmake
+</span></span><span style="display:flex;"><span>Descomentá qt_configure_add_summary_entry<span style="color:#f92672">(</span>ARGS <span style="color:#e6db74">&#34;kmap2qmap&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>cd /home/usuario/Downloads/qttools-6.8.1
+</span></span><span style="display:flex;"><span>mkdir build
+</span></span><span style="display:flex;"><span>cd build
 </span></span><span style="display:flex;"><span>cmake ..
 </span></span><span style="display:flex;"><span>make
 </span></span><span style="display:flex;"><span>sudo make install
