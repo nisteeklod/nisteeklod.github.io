@@ -29,7 +29,7 @@ git clone https://github.com/qt/qttools cd qttools mkdir build cmake .. Y agreg�
 export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap OJOO!!! Asegurarte de bajar el qttools para la versión de tu QT. Ejemplo de error:">
   <meta itemprop="datePublished" content="2024-12-08T18:39:44-03:00">
   <meta itemprop="dateModified" content="2024-12-08T18:39:44-03:00">
-  <meta itemprop="wordCount" content="228">
+  <meta itemprop="wordCount" content="258">
   <meta itemprop="keywords" content="Framebuffer">
   
   <meta name="twitter:card" content="summary">
@@ -160,8 +160,13 @@ Ejemplo de error:</p>
 </span></span><span style="display:flex;"><span>cmake ..
 </span></span><span style="display:flex;"><span>make
 </span></span><span style="display:flex;"><span>sudo make install
-</span></span></code></pre></div><p><strong>Y ahora sí compila!</strong> <br>
-Todo esto para tener la utilidad <code>kmap2qmap</code> y poder tener el teclado en español XDD, amo el framebuffer.</p>
+</span></span></code></pre></div><p><strong>Y ahora sí compila, pero no aparece kmap2qmap en mi caso no sé por qué</strong></p>
+<p>Olvidate de todo esto si no te funcionó cloná este repo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/neochapay/kmap2qmap
+</span></span><span style="display:flex;"><span>cd kmap2qmap
+</span></span><span style="display:flex;"><span>qmake .
+</span></span><span style="display:flex;"><span>./kmap2qmap
+</span></span></code></pre></div><p>Todo esto para tener la utilidad <code>kmap2qmap</code> y poder tener el teclado en español XDD, amo el framebuffer.</p>
 
 </div>
 
