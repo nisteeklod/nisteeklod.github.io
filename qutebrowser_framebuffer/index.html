@@ -29,7 +29,7 @@ git clone https://github.com/qt/qttools cd qttools mkdir build cmake .. Y agreg�
 export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap OJOO!!! Asegurarte de bajar el qttools para la versión de tu QT. Ejemplo de error:">
   <meta itemprop="datePublished" content="2024-12-08T18:39:44-03:00">
   <meta itemprop="dateModified" content="2024-12-08T18:39:44-03:00">
-  <meta itemprop="wordCount" content="284">
+  <meta itemprop="wordCount" content="200">
   <meta itemprop="keywords" content="Framebuffer">
   
   <meta name="twitter:card" content="summary">
@@ -145,7 +145,7 @@ Ejemplo de error:">
 Ejemplo de error:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Version 6.8.2 of package Qt6 was requested but an incompatible version was found: 6.8.1.  You can pass -DQT_NO_PACKAGE_VERSION_CHECK<span style="color:#f92672">=</span>TRUE to disable
 </span></span></code></pre></div><p>Tenés que entrar a la página de qttools bajo Release encontrarás TAGS. Ahí buscá la vresión indicada para vos: en mi caso 6.8.1</p>
-<p><strong>ESO NO ES TODO!!!</strong> Ahora cuando clones 6.8.1 y lo compiles te va a putear porque te falta src/assistant/qlitehtml porque es un submodulo que no lo baja. Tenés que clonar este repo en <code>/tmp</code> ejecutá:</p>
+<p><strong>ESO NO ES TODO!!!</strong> Ahora cuando bajes el zip o el tar.gz de tu versión (en mi caso 6.8.1) y lo compiles te va a putear porque te falta <code>src/assistant/qlitehtml</code> porque es un submódulo que no lo baja. Tenés que clonar este repo en <code>/tmp</code> ejecutá:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --recurse-submodules -j8 <span style="color:#e6db74">&#34;https://github.com/PyQt5/QLiteHtml&#34;</span><span style="color:#e6db74">`</span>
 </span></span><span style="display:flex;"><span>cd QLiteHtml
 </span></span><span style="display:flex;"><span>cp -R qlitehtml /home/usuario/Downloads/qttools-6.8.1/src/assistant
@@ -153,20 +153,8 @@ Ejemplo de error:</p>
 </span></span><span style="display:flex;"><span>cmake ..
 </span></span><span style="display:flex;"><span>make
 </span></span><span style="display:flex;"><span>sudo make install
-</span></span></code></pre></div><p>Y ahora sí compila! Todo esto para tener la utilidad <code>kmap2qmap</code> y poder tener el teclado en español XDD, amo el framebuffer.</p>
-<p>Fuente: <a href="https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching">https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching</a></p>
-<p>Cambiar de TTY (Virtual Terminal):</p>
-<h3 id="1-use-chvt-with-fbcon-framebuffer-console-locking">1. <strong>Use <code>chvt</code> with <code>fbcon</code> (Framebuffer Console) Locking</strong></h3>
-<p>You can lock the framebuffer so that the Qt app doesn&rsquo;t redraw when you switch between VTs. Here&rsquo;s how to do this:</p>
-<ol>
-<li>
-<p><strong>Disable the framebuffer updates when switching VTs:</strong>
-You can use <code>fbcon</code> to disable the updates for the virtual terminal console. This
-can be done by switching to a virtual terminal and executing the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;1&#34;</span> &gt; /sys/class/vtconsole/vtcon0/bind
-</span></span></code></pre></div><p>This command will bind the virtual terminal (VT) console to the framebuffer and prevent it from redrawing when switching.</p>
-</li>
-</ol>
+</span></span></code></pre></div><p><strong>Y ahora sí compila!</strong> <br>
+Todo esto para tener la utilidad <code>kmap2qmap</code> y poder tener el teclado en español XDD, amo el framebuffer.</p>
 
 </div>
 
