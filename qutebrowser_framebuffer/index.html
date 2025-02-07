@@ -11,11 +11,9 @@
   <meta property="og:title" content="Ejecutar qutebrowser en framebuffer">
   <meta property="og:description" content="export QT_QPA_PLATFORM=linuxfb export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600 qutebrowser O usando también: export QT_QPA_PLATFORM=eglfs
 Cambiar el keymap:
-sudo pacman -S ckbcomp ckbcomp -layout xx &gt; xx.kmap O tomá un keymap desde acá: /usr/share/kbd/keymaps/i386/qwertz kmap2qmap xx.kmap xx.qmap QWS_KEYBOARD=&#34;TTY:keymap=xx.qmap&#34; Compilá kmap2qmap desde acá:: git clone https://github.com/openwebos/qt/
-Y agregá en .bashrc o en .config/fish/config.fish:
-export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap Fuente: https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching
-Cambiar de TTY (Virtual Terminal):
-1. Use chvt with fbcon (Framebuffer Console) Locking You can lock the framebuffer so that the Qt app doesn’t redraw when you switch between VTs. Here’s how to do this:">
+sudo pacman -S ckbcomp ckbcomp -layout xx &gt; xx.kmap O tomá un keymap desde acá: /usr/share/kbd/keymaps/i386/qwertz kmap2qmap xx.kmap xx.qmap QWS_KEYBOARD=&#34;TTY:keymap=xx.qmap&#34; Compilá kmap2qmap desde acá::
+git clone https://github.com/qt/qttools cd qttools mkdir build cmake .. Y agregá en .bashrc o en .config/fish/config.fish:
+export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap OJOO!!! Asegurarte de bajar el qttools para la versión de tu QT. Ejemplo de error:">
   <meta property="og:locale" content="es_es">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2024-12-08T18:39:44-03:00">
@@ -26,25 +24,21 @@ Cambiar de TTY (Virtual Terminal):
   <meta itemprop="name" content="Ejecutar qutebrowser en framebuffer">
   <meta itemprop="description" content="export QT_QPA_PLATFORM=linuxfb export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600 qutebrowser O usando también: export QT_QPA_PLATFORM=eglfs
 Cambiar el keymap:
-sudo pacman -S ckbcomp ckbcomp -layout xx &gt; xx.kmap O tomá un keymap desde acá: /usr/share/kbd/keymaps/i386/qwertz kmap2qmap xx.kmap xx.qmap QWS_KEYBOARD=&#34;TTY:keymap=xx.qmap&#34; Compilá kmap2qmap desde acá:: git clone https://github.com/openwebos/qt/
-Y agregá en .bashrc o en .config/fish/config.fish:
-export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap Fuente: https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching
-Cambiar de TTY (Virtual Terminal):
-1. Use chvt with fbcon (Framebuffer Console) Locking You can lock the framebuffer so that the Qt app doesn’t redraw when you switch between VTs. Here’s how to do this:">
+sudo pacman -S ckbcomp ckbcomp -layout xx &gt; xx.kmap O tomá un keymap desde acá: /usr/share/kbd/keymaps/i386/qwertz kmap2qmap xx.kmap xx.qmap QWS_KEYBOARD=&#34;TTY:keymap=xx.qmap&#34; Compilá kmap2qmap desde acá::
+git clone https://github.com/qt/qttools cd qttools mkdir build cmake .. Y agregá en .bashrc o en .config/fish/config.fish:
+export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap OJOO!!! Asegurarte de bajar el qttools para la versión de tu QT. Ejemplo de error:">
   <meta itemprop="datePublished" content="2024-12-08T18:39:44-03:00">
   <meta itemprop="dateModified" content="2024-12-08T18:39:44-03:00">
-  <meta itemprop="wordCount" content="144">
+  <meta itemprop="wordCount" content="284">
   <meta itemprop="keywords" content="Framebuffer">
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ejecutar qutebrowser en framebuffer">
   <meta name="twitter:description" content="export QT_QPA_PLATFORM=linuxfb export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600 qutebrowser O usando también: export QT_QPA_PLATFORM=eglfs
 Cambiar el keymap:
-sudo pacman -S ckbcomp ckbcomp -layout xx &gt; xx.kmap O tomá un keymap desde acá: /usr/share/kbd/keymaps/i386/qwertz kmap2qmap xx.kmap xx.qmap QWS_KEYBOARD=&#34;TTY:keymap=xx.qmap&#34; Compilá kmap2qmap desde acá:: git clone https://github.com/openwebos/qt/
-Y agregá en .bashrc o en .config/fish/config.fish:
-export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap Fuente: https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching
-Cambiar de TTY (Virtual Terminal):
-1. Use chvt with fbcon (Framebuffer Console) Locking You can lock the framebuffer so that the Qt app doesn’t redraw when you switch between VTs. Here’s how to do this:">
+sudo pacman -S ckbcomp ckbcomp -layout xx &gt; xx.kmap O tomá un keymap desde acá: /usr/share/kbd/keymaps/i386/qwertz kmap2qmap xx.kmap xx.qmap QWS_KEYBOARD=&#34;TTY:keymap=xx.qmap&#34; Compilá kmap2qmap desde acá::
+git clone https://github.com/qt/qttools cd qttools mkdir build cmake .. Y agregá en .bashrc o en .config/fish/config.fish:
+export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap OJOO!!! Asegurarte de bajar el qttools para la versión de tu QT. Ejemplo de error:">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,13 +67,15 @@ O tomá un keymap desde acá: /usr/share/kbd/keymaps/i386/qwertz
 kmap2qmap xx.kmap xx.qmap
 QWS_KEYBOARD=&#34;TTY:keymap=xx.qmap&#34;
 Compilá kmap2qmap desde acá::
-git clone https://github.com/openwebos/qt/
+git clone https://github.com/qt/qttools
+cd qttools
+mkdir build
+cmake ..
 Y agregá en .bashrc o en .config/fish/config.fish:
 export QT_QPA_PLATFORM=linuxfb:offset=900x130:size=768x600:keymap=es.qmap
-Fuente: https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching
-Cambiar de TTY (Virtual Terminal):
-1. Use chvt with fbcon (Framebuffer Console) Locking
-You can lock the framebuffer so that the Qt app doesn&rsquo;t redraw when you switch between VTs. Here&rsquo;s how to do this:">
+OJOO!!!
+Asegurarte de bajar el qttools para la versión de tu QT.
+Ejemplo de error:">
 </head>
 <body><nav class="navbar is-transparent " role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -137,11 +133,28 @@ You can lock the framebuffer so that the Qt app doesn&rsquo;t redraw when you sw
 </span></span><span style="display:flex;"><span>O tomá un keymap desde acá: /usr/share/kbd/keymaps/i386/qwertz
 </span></span><span style="display:flex;"><span>kmap2qmap xx.kmap xx.qmap
 </span></span><span style="display:flex;"><span>QWS_KEYBOARD<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;TTY:keymap=xx.qmap&#34;</span>
-</span></span></code></pre></div><p><strong>Compilá kmap2qmap desde acá:</strong>:
-git clone <a href="https://github.com/openwebos/qt/">https://github.com/openwebos/qt/</a></p>
-<p>Y agregá en <code>.bashrc</code> o en <code>.config/fish/config.fish</code>:</p>
+</span></span></code></pre></div><p><strong>Compilá kmap2qmap desde acá:</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/qt/qttools
+</span></span><span style="display:flex;"><span>cd qttools
+</span></span><span style="display:flex;"><span>mkdir build
+</span></span><span style="display:flex;"><span>cmake ..
+</span></span></code></pre></div><p>Y agregá en <code>.bashrc</code> o en <code>.config/fish/config.fish</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export QT_QPA_PLATFORM<span style="color:#f92672">=</span>linuxfb:offset<span style="color:#f92672">=</span>900x130:size<span style="color:#f92672">=</span>768x600:keymap<span style="color:#f92672">=</span>es.qmap
-</span></span></code></pre></div><p>Fuente: <a href="https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching">https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching</a></p>
+</span></span></code></pre></div><h3 id="ojoo">OJOO!!!</h3>
+<p>Asegurarte de bajar el qttools para la versión de tu QT.
+Ejemplo de error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Version 6.8.2 of package Qt6 was requested but an incompatible version was found: 6.8.1.  You can pass -DQT_NO_PACKAGE_VERSION_CHECK<span style="color:#f92672">=</span>TRUE to disable
+</span></span></code></pre></div><p>Tenés que entrar a la página de qttools bajo Release encontrarás TAGS. Ahí buscá la vresión indicada para vos: en mi caso 6.8.1</p>
+<p><strong>ESO NO ES TODO!!!</strong> Ahora cuando clones 6.8.1 y lo compiles te va a putear porque te falta src/assistant/qlitehtml porque es un submodulo que no lo baja. Tenés que clonar este repo en <code>/tmp</code> ejecutá:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --recurse-submodules -j8 <span style="color:#e6db74">&#34;https://github.com/PyQt5/QLiteHtml&#34;</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>cd QLiteHtml
+</span></span><span style="display:flex;"><span>cp -R qlitehtml /home/usuario/Downloads/qttools-6.8.1/src/assistant
+</span></span><span style="display:flex;"><span>cd /home/usuario/Downloads/qttools-6.8.1/build
+</span></span><span style="display:flex;"><span>cmake ..
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>sudo make install
+</span></span></code></pre></div><p>Y ahora sí compila! Todo esto para tener la utilidad <code>kmap2qmap</code> y poder tener el teclado en español XDD, amo el framebuffer.</p>
+<p>Fuente: <a href="https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching">https://stackoverflow.com/questions/2669464/qt-embedded-for-linux-keyboard-layout-switching</a></p>
 <p>Cambiar de TTY (Virtual Terminal):</p>
 <h3 id="1-use-chvt-with-fbcon-framebuffer-console-locking">1. <strong>Use <code>chvt</code> with <code>fbcon</code> (Framebuffer Console) Locking</strong></h3>
 <p>You can lock the framebuffer so that the Qt app doesn&rsquo;t redraw when you switch between VTs. Here&rsquo;s how to do this:</p>
