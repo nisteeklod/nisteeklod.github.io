@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imlauera.github.io/</loc>
+    <lastmod>2025-02-07T16:18:55-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/linux/</loc>
+    <lastmod>2025-02-07T16:18:55-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/rebuild_cmake/</loc>
+    <lastmod>2025-02-07T16:18:55-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-07T16:18:55-03:00</lastmod>
+  </url><url>
     <loc>https://imlauera.github.io/tags/c/</loc>
     <lastmod>2025-02-06T23:48:17-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/como_usar_errno_c/</loc>
-    <lastmod>2025-02-06T23:48:17-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-06T23:48:17-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/</loc>
     <lastmod>2025-02-06T23:48:17-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/buscar_palabra_en_archivo_comprimido/</loc>
@@ -87,9 +93,6 @@
     <lastmod>2025-01-31T05:55:16-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/findutils/</loc>
-    <lastmod>2025-01-31T05:55:16-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/linux/</loc>
     <lastmod>2025-01-31T05:55:16-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/airgeddon_plugins/</loc>

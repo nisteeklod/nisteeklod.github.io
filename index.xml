@@ -6,8 +6,15 @@
     <description>Recent content on Imlauer</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Thu, 06 Feb 2025 23:48:17 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2025 16:18:55 -0300</lastBuildDate>
     <atom:link href="https://imlauera.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rebuild cmake</title>
+      <link>https://imlauera.github.io/rebuild_cmake/</link>
+      <pubDate>Fri, 07 Feb 2025 16:18:55 -0300</pubDate>
+      <guid>https://imlauera.github.io/rebuild_cmake/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/50102893/rebuild-configuration-file-when-there-are-no-cmake-changes&#34;&gt;https://stackoverflow.com/questions/50102893/rebuild-configuration-file-when-there-are-no-cmake-changes&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;There are a few issues you need to overcome to have this work.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;When cmake is run any version information you extract from subversion is baked into the generated build files, and so becomes static.&lt;/li&gt;&#xA;&lt;li&gt;Cmake is only rerun if it detects the generated build files have become out of date (eg: if a CMakeLists.txt file is updated)&lt;/li&gt;&#xA;&lt;li&gt;You can create a custom_target which will be run every time you build (from the docs: &amp;ldquo;The target has no output file and is ALWAYS CONSIDERED OUT OF DATE&amp;rdquo;) which generates the file, but that will force you to rebuild your generated version file every time.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>Cómo usar errno en C</title>
       <link>https://imlauera.github.io/como_usar_errno_c/</link>
