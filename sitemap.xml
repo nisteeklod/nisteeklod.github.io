@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imlauera.github.io/compilar_pro_files/</loc>
+    <lastmod>2025-02-07T18:56:57-03:00</lastmod>
+  </url><url>
     <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-07T16:18:55-03:00</lastmod>
+    <lastmod>2025-02-07T18:56:57-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/qmake/</loc>
+    <lastmod>2025-02-07T18:56:57-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-07T18:56:57-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/linux/</loc>
     <lastmod>2025-02-07T16:18:55-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/rebuild_cmake/</loc>
-    <lastmod>2025-02-07T16:18:55-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/</loc>
     <lastmod>2025-02-07T16:18:55-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/c/</loc>
