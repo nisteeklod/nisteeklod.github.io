@@ -6,8 +6,15 @@
     <description>Recent content in C on Imlauer</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Fri, 07 Feb 2025 21:08:05 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 02:22:43 -0300</lastBuildDate>
     <atom:link href="https://imlauera.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debuggear c con GDB</title>
+      <link>https://imlauera.github.io/debugear_c/</link>
+      <pubDate>Sat, 08 Feb 2025 02:22:43 -0300</pubDate>
+      <guid>https://imlauera.github.io/debugear_c/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcc -ggdb find_length_string.c -o  find_length_string&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gdb -q ./find_length_string&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;break main&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;run&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Cargar texto de archivo a un array de arrays</title>
       <link>https://imlauera.github.io/cargar_archivo_texto_a_buffer/</link>
