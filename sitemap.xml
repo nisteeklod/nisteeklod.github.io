@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imlauera.github.io/</loc>
+    <lastmod>2025-02-08T23:15:28-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-08T23:15:28-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/teclado/</loc>
+    <lastmod>2025-02-08T23:15:28-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/transforma_cualquier_teclado_a_bluetooth/</loc>
+    <lastmod>2025-02-08T23:15:28-03:00</lastmod>
+  </url><url>
     <loc>https://imlauera.github.io/tags/c/</loc>
     <lastmod>2025-02-08T18:44:48-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/free_array_of_arrays/</loc>
-    <lastmod>2025-02-08T18:44:48-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-08T18:44:48-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/</loc>
     <lastmod>2025-02-08T18:44:48-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/debugear_c/</loc>
