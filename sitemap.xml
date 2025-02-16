@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imlauera.github.io/estafa_ponzi/</loc>
+    <lastmod>2025-02-16T12:46:43-03:00</lastmod>
+  </url><url>
     <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-15T22:04:48-03:00</lastmod>
+    <lastmod>2025-02-16T12:46:43-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/ponzi/</loc>
+    <lastmod>2025-02-16T12:46:43-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-16T12:46:43-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/c/</loc>
     <lastmod>2025-02-15T22:04:37-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/leer_texto_archivo/</loc>
-    <lastmod>2025-02-15T22:04:37-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/</loc>
     <lastmod>2025-02-15T22:04:37-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/experimento_malvavisco/</loc>
@@ -2900,8 +2906,6 @@
     <loc>https://imlauera.github.io/post/league_of_legends_linux/</loc>
   </url><url>
     <loc>https://imlauera.github.io/personal_bloquea_sitios/</loc>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/ponzi/</loc>
   </url><url>
     <loc>https://imlauera.github.io/portonelectrico/</loc>
   </url><url>

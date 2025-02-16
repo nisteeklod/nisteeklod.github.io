@@ -6,8 +6,15 @@
     <description>Recent content on Imlauer</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Sat, 15 Feb 2025 22:04:37 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2025 12:46:43 -0300</lastBuildDate>
     <atom:link href="https://imlauera.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Estafa ponzi</title>
+      <link>https://imlauera.github.io/estafa_ponzi/</link>
+      <pubDate>Sun, 16 Feb 2025 12:46:43 -0300</pubDate>
+      <guid>https://imlauera.github.io/estafa_ponzi/</guid>
+      <description>&lt;p&gt;Pagar con el dinero de los nuevos inversionistas a los viejos inversionistas. Sin tener ninguna actividad comercial.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Cargar texto de un archivo en un buffer en C</title>
       <link>https://imlauera.github.io/leer_texto_archivo/</link>
