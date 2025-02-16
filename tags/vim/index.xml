@@ -6,8 +6,15 @@
     <description>Recent content in Vim on Imlauer</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Wed, 22 Jan 2025 05:10:26 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2025 17:06:43 -0300</lastBuildDate>
     <atom:link href="https://imlauera.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Insertar_texto_seleccionado_a_archivo_vim</title>
+      <link>https://imlauera.github.io/insertar_texto_seleccionado_a_archivo_vim/</link>
+      <pubDate>Sun, 16 Feb 2025 17:06:43 -0300</pubDate>
+      <guid>https://imlauera.github.io/insertar_texto_seleccionado_a_archivo_vim/</guid>
+      <description>&lt;p&gt;You can do it in three steps:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;type &lt;code&gt;Shift-vj...j&lt;/code&gt; to select some lines&lt;/li&gt;&#xA;&lt;li&gt;type &lt;code&gt;:&#39;&amp;lt;,&#39;&amp;gt;w! &amp;gt;&amp;gt;file.bak&lt;/code&gt; to save selected lines to file.bak(append)&lt;/li&gt;&#xA;&lt;li&gt;type gvd to delete original lines&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You can write a user-defined command Sbak if you like:&lt;/p&gt;&#xA;&lt;p&gt;com! -nargs=1 -range Sbak call MoveSelectedLinesToFile(&lt;!-- raw HTML omitted --&gt;)&#xA;fun! MoveSelectedLinesToFile(filename)&#xA;exec &amp;ldquo;&amp;rsquo;&amp;lt;,&amp;rsquo;&amp;gt;w! &amp;raquo;&amp;rdquo; . a:filename&#xA;norm gvd&#xA;endfunc&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Como ejecutar líneas selecionadas en vim</title>
       <link>https://imlauera.github.io/como_ejecutar_lineas_selecionadas_en_vim/</link>
