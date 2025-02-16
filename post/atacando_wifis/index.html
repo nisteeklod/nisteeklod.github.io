@@ -33,7 +33,7 @@ sudo su export AIRGEDDON_WINDOWS_HANDLING=tmux airgeddon Más info acá: https:/
 sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bruta con airgeddon, creando gemelo malvado. Podes crear diccionarios específicos así:">
   <meta itemprop="datePublished" content="2024-07-21T19:48:09-03:00">
   <meta itemprop="dateModified" content="2024-07-21T19:48:09-03:00">
-  <meta itemprop="wordCount" content="3776">
+  <meta itemprop="wordCount" content="3939">
   <meta itemprop="keywords" content="Atacando,Redes,Ciberseguridad,Vulnerabilidades">
   
   <meta name="twitter:card" content="summary">
@@ -687,6 +687,34 @@ Archive: <a href="https://archive.is/wip/JgyL7">https://archive.is/wip/JgyL7</a>
 <pre tabindex="0"><code>grep -E &#39;\b([^0-9]*[0-9]){4}$[^0-9]*\b&#39; weakpass_4.latin.txt &gt; sanchez_dicc1
 grep -E &#39;^[^0-9]*([0-9]){4}$&#39; sanchez_dicc1 &gt; sanchez_dicc2
 </code></pre><p>aircrack-ng -w sanchez_dicc2 /home/esotericwarfare/Sanchez1/handshake-FE:A0:3F:21:00:91.cap</p>
+<p>Supongamos que corremos el diccionario de 46 gigabytes o hacemos un ataque de gemelo malvado o hacemos un ataque de WPS o hacemos un ataque de WEP (obsoleto) y encontramos que la contraseña es: sakura2629</p>
+<p>Ahora ya conocemos el patrón de la contraseña.</p>
+<p>Entonces tomamos un diccionario de 46 gigas y aplicamos los siguientes filtros:</p>
+<ol>
+<li>
+<p>Cómo mínimo la contraseña tiene que ser 8 caracteres.</p>
+</li>
+<li>
+<p>Solo nos quedamos con las palabras que tengan exactamente 4 números AL FINAL.</p>
+</li>
+<li>
+<p>Creamos 3 diccionarios:</p>
+</li>
+</ol>
+<ul>
+<li>Solo nos quedamos con las palabras que contengan sakura: menos de 1 megabyte.</li>
+<li>Solo nos quedamos con las palabras que contengan 26: aprox. 500 megabytes que lo podés probar en 3 horas.</li>
+<li>Solo nos quedamos con las palabras que contengan 29: aprox. 500 megabytes que lo podés probar en 3 horas.</li>
+</ul>
+<p>Es decir de un diccionario de 46 gigabytes nos quedamos con 3 diccionarios que lo podemos probar en menos de 1 día.</p>
+<p>Fibertel WiFi fjw</p>
+<p>004+DNI+fjw
+003+DNI+fjw
+001+DNI+fjw
+002+DNI+fjw
+014+DNI+fjw
+420+DNI+fjw
+412+DNI+fjw</p>
 <p>Saludos, que Dios los bendiga.</p>
 
 </div>
