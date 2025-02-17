@@ -27,7 +27,7 @@ sudo systemctl stop NetworkManager sudo systemctl stop wpa_supplicant Es importa
 Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento. Esto fue mencionado en el changelog.">
   <meta itemprop="datePublished" content="2025-02-16T13:16:01-03:00">
   <meta itemprop="dateModified" content="2025-02-16T13:16:01-03:00">
-  <meta itemprop="wordCount" content="3990">
+  <meta itemprop="wordCount" content="4081">
   <meta itemprop="keywords" content="Hacking">
   
   <meta name="twitter:card" content="summary">
@@ -113,7 +113,9 @@ Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento.
 </span></span></code></pre></div><p>Es importante tener la última versión de <code>hcxdumptool</code>:</p>
 <p>Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento.  Esto fue mencionado en el changelog.</p>
 <p>Para atacar una MAC ADDRESS en específico se crea un Berkeley Packet Filter</p>
-<p>Just create a Berkeley Packet Filter and add it to hcxdumptool.  Steps to create a simple filter: set monitor mode</p>
+<p>Con <code>airodump</code> obtenés el BBSID y luego:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo airodump-ng wlp1s0
+</span></span></code></pre></div><p>Just create a Berkeley Packet Filter and add it to hcxdumptool.  Steps to create a simple filter: set monitor mode</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ hcxdumptool -m INTERFACENAME
 </span></span></code></pre></div><p>create the filter (this example use 11:22:33:44:55:66 as target address)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ sudo tcpdump -i INTERFACENAME wlan addr1 11:22:33:44:55:66 or wlan addr2 11:22:33:44:55:66 or wlan addr3 11:22:33:44:55:66 -ddd &gt; attack.bpf
@@ -130,7 +132,15 @@ Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento.
 <h4 id="capturar-handshake">Capturar handshake:</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hcxdumptool -i INTERFACE -w dumpfile.pcapng -F --rds<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><p>Luego de 3 minutos, detené la captura con Control+C y vas a tener los paquetes capturados en tu directorio home: hash.hc22000 y esidist l handshake será guardado en <code>dumpfile.pcaapng</code></p>
-<hr>
+<p>Podés intentar romper el handshake usando hashcat:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hcxpcapngtool -o hash.hc22000 -E wordlist dumpfile.pcapng
+</span></span><span style="display:flex;"><span>hashcat -m <span style="color:#ae81ff">2200</span> -o wordlist.txt hash.hc2200
+</span></span></code></pre></div><h4 id="atacando-con-aircrack">Atacando con aircrack</h4>
+<p>Aircrack no soporta pcapng asi que tenés que transformarlo usando el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tshark -r foo.pcapng -w foo.pcap -F libcap
+</span></span><span style="display:flex;"><span>tcpdump -r dumpfile.pcapng -w foo.pcap
+</span></span><span style="display:flex;"><span>aircrack-ng -w rockyou.txt foo.pcap
+</span></span></code></pre></div><hr>
 <p>Command summary for Wi-Fi security audit</p>
 <h5 id="old-command-arguments">OLD COMMAND ARGUMENTS:</h5>
 <p>Network interface names:</p>
@@ -695,8 +705,15 @@ hashcat &ndash;hwmon-temp-abort=100 -a 3 -m 22000 -d 1 RT-728005.hash ?d?d?d?d?d
 </span></span><span style="display:flex;"><span>sudo make install
 </span></span><span style="display:flex;"><span>hcxdumptool -I 
 </span></span><span style="display:flex;"><span>hcxdumptool -i INTERFACE -o file.pcapng --active_beacon --enable_status<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span>
-</span></span></code></pre></div><p><a href="https://miloserdov.org/?p=7801">https://miloserdov.org/?p=7801</a></p>
-
+</span></span></code></pre></div><p>Posibles errores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Possible reasons:
+</span></span><span style="display:flex;"><span> driver is broken
+</span></span><span style="display:flex;"><span> driver is busy <span style="color:#f92672">(</span>misconfigured system, other services access the INTERFACE<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4772</span> Packet<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> captured by kernel
+</span></span></code></pre></div><p>Solución:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl stop NetworkManager
+</span></span><span style="display:flex;"><span>sudo systemctl stop wpa_supplicant
+</span></span></code></pre></div>
 </div>
 
 
