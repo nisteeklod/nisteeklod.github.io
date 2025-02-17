@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-16T17:06:43-03:00</lastmod>
+    <loc>https://imlauera.github.io/bettercap/</loc>
+    <lastmod>2025-02-16T23:14:38-03:00</lastmod>
   </url><url>
-    <loc>https://imlauera.github.io/insertar_texto_seleccionado_a_archivo_vim/</loc>
-    <lastmod>2025-02-16T17:06:43-03:00</lastmod>
+    <loc>https://imlauera.github.io/</loc>
+    <lastmod>2025-02-16T23:14:38-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-16T23:14:38-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/wifi/</loc>
+    <lastmod>2025-02-16T23:14:38-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/insertar_texto_seleccionado_a_archivo_vim/</loc>
     <lastmod>2025-02-16T17:06:43-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/vim/</loc>
