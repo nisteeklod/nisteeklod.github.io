@@ -6,8 +6,15 @@
     <description>Recent content in Bash on Imlauer</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Mon, 03 Feb 2025 11:35:33 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2025 16:47:46 -0300</lastBuildDate>
     <atom:link href="https://imlauera.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cortar todo hasta una línea</title>
+      <link>https://imlauera.github.io/cortar_todo_hasta_una_linea/</link>
+      <pubDate>Tue, 18 Feb 2025 16:47:46 -0300</pubDate>
+      <guid>https://imlauera.github.io/cortar_todo_hasta_una_linea/</guid>
+      <description>&lt;p&gt;You can use GNU sed:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sed -i &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;5,$d&amp;#39;&lt;/span&gt; file.txt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That is, 5,$ means the range line 5 until the end, and d means to delete. Only the&#xA;first 4 lines will remain. The -i flag tells sed to edit the file in-place.&lt;/p&gt;&#xA;&lt;p&gt;If you have only BSD sed, then the -i flag requires a backup file suffix:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sed -i.bak &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;5,$d&amp;#39;&lt;/span&gt; file.txt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As @ephemient pointed out, while this solution is simple, it&amp;rsquo;s inefficient because&#xA;sed will still read the input until the end of the file, which is unnecessary.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Debugear bash</title>
       <link>https://imlauera.github.io/debugear_bash/</link>

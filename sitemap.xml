@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://imlauera.github.io/bettercap/</loc>
-    <lastmod>2025-02-16T23:14:38-03:00</lastmod>
+    <loc>https://imlauera.github.io/tags/bash/</loc>
+    <lastmod>2025-02-18T16:47:46-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/cortar_todo_hasta_una_linea/</loc>
+    <lastmod>2025-02-18T16:47:46-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-16T23:14:38-03:00</lastmod>
+    <lastmod>2025-02-18T16:47:46-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-18T16:47:46-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/bettercap/</loc>
     <lastmod>2025-02-16T23:14:38-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/wifi/</loc>
@@ -109,9 +115,6 @@
   </url><url>
     <loc>https://imlauera.github.io/tags/porton/</loc>
     <lastmod>2025-02-03T16:51:42-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/bash/</loc>
-    <lastmod>2025-02-03T11:35:33-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/debugear_bash/</loc>
     <lastmod>2025-02-03T11:35:33-03:00</lastmod>
