@@ -29,7 +29,7 @@ sudo systemctl stop NetworkManager sudo systemctl stop wpa_supplicant Es importa
 Desde la versión 6.3.0 las opciones hay cambiados por problemas de rendimiento. Esto fue mencionado en el changelog.">
   <meta itemprop="datePublished" content="2025-02-16T13:16:01-03:00">
   <meta itemprop="dateModified" content="2025-02-16T13:16:01-03:00">
-  <meta itemprop="wordCount" content="4091">
+  <meta itemprop="wordCount" content="4129">
   <meta itemprop="keywords" content="Hacking">
   
   <meta name="twitter:card" content="summary">
@@ -719,7 +719,12 @@ hashcat &ndash;hwmon-temp-abort=100 -a 3 -m 22000 -d 1 RT-728005.hash ?d?d?d?d?d
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl stop NetworkManager
 </span></span><span style="display:flex;"><span>sudo systemctl stop wpa_supplicant
 </span></span></code></pre></div><p><a href="https://www.hackingarticles.in/wireless-penetration-testing-pmkid-attack/">https://www.hackingarticles.in/wireless-penetration-testing-pmkid-attack/</a></p>
-<p><a href="https://miloserdov.org/?p=7801">https://miloserdov.org/?p=7801</a></p>
+<h4 id="si-querés-seguir-este-tutorial-que-ya-está-desactualizado-yo-me-bajé-la-versión-606">Si querés seguir este tutorial que ya está desactualizado yo me bajé la versión 6.0.6</h4>
+<p>Primero de todo tenés que matar <code>wpa_supplicant</code> y <code>NetworkManager</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo airmon-ng check kill
+</span></span></code></pre></div><p><a href="https://miloserdov.org/?p=7801">https://miloserdov.org/?p=7801</a></p>
+<p>Los parámetros de ese tutorial funcionan con esta versión: <br>
+<a href="https://github.com/ZerBea/hcxdumptool/archive/refs/tags/6.0.6.tar.gz">https://github.com/ZerBea/hcxdumptool/archive/refs/tags/6.0.6.tar.gz</a></p>
 
 </div>
 
