@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://imlauera.github.io/excel_en_terminal/</loc>
-    <lastmod>2025-02-22T19:01:07-03:00</lastmod>
+    <loc>https://imlauera.github.io/tags/audio/</loc>
+    <lastmod>2025-02-25T06:06:32-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/m4a_to_opus/</loc>
+    <lastmod>2025-02-25T06:06:32-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-22T19:01:07-03:00</lastmod>
+    <lastmod>2025-02-25T06:06:32-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-25T06:06:32-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/excel_en_terminal/</loc>
     <lastmod>2025-02-22T19:01:07-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/vim/</loc>
@@ -1996,9 +2002,6 @@
   </url><url>
     <loc>https://imlauera.github.io/post/marketing_reflexion/</loc>
     <lastmod>2024-07-26T01:41:44-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/audio/</loc>
-    <lastmod>2024-07-25T20:24:37-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/post/como_recuperar_archivos_de_audio_corruptos/</loc>
     <lastmod>2024-07-25T20:24:37-03:00</lastmod>
