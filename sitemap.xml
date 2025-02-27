@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imlauera.github.io/</loc>
+    <lastmod>2025-02-27T01:00:41-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/mi_configuracion_w3m/</loc>
+    <lastmod>2025-02-27T01:00:41-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-27T01:00:41-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/w3m/</loc>
+    <lastmod>2025-02-27T01:00:41-03:00</lastmod>
+  </url><url>
     <loc>https://imlauera.github.io/tags/c/</loc>
     <lastmod>2025-02-27T00:46:28-03:00</lastmod>
   </url><url>
-    <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-27T00:46:28-03:00</lastmod>
-  </url><url>
     <loc>https://imlauera.github.io/makefile/</loc>
-    <lastmod>2025-02-27T00:46:28-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/</loc>
     <lastmod>2025-02-27T00:46:28-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/audio/</loc>
@@ -586,9 +592,6 @@
   </url><url>
     <loc>https://imlauera.github.io/borrar_archivo_grande_pusheado_por_error/</loc>
     <lastmod>2024-11-15T10:20:34-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/w3m/</loc>
-    <lastmod>2024-11-15T10:10:07-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/w3m/</loc>
     <lastmod>2024-11-15T10:10:07-03:00</lastmod>
