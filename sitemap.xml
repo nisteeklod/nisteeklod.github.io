@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://imlauera.github.io/</loc>
-    <lastmod>2025-02-27T01:00:41-03:00</lastmod>
+    <loc>https://imlauera.github.io/abrir_grandes_archivos/</loc>
+    <lastmod>2025-02-28T20:49:44-03:00</lastmod>
   </url><url>
-    <loc>https://imlauera.github.io/mi_configuracion_w3m/</loc>
-    <lastmod>2025-02-27T01:00:41-03:00</lastmod>
+    <loc>https://imlauera.github.io/tags/big/</loc>
+    <lastmod>2025-02-28T20:49:44-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/tags/files/</loc>
+    <lastmod>2025-02-28T20:49:44-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/</loc>
+    <lastmod>2025-02-28T20:49:44-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/</loc>
+    <lastmod>2025-02-28T20:49:44-03:00</lastmod>
+  </url><url>
+    <loc>https://imlauera.github.io/mi_configuracion_w3m/</loc>
     <lastmod>2025-02-27T01:00:41-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/tags/w3m/</loc>
@@ -1831,9 +1840,6 @@
   </url><url>
     <loc>https://imlauera.github.io/tags/hora/</loc>
     <lastmod>2024-08-11T18:15:20-03:00</lastmod>
-  </url><url>
-    <loc>https://imlauera.github.io/tags/files/</loc>
-    <lastmod>2024-08-10T18:25:47-03:00</lastmod>
   </url><url>
     <loc>https://imlauera.github.io/post/subir_archivo_desde_la_terminal/</loc>
     <lastmod>2024-08-10T18:25:47-03:00</lastmod>
